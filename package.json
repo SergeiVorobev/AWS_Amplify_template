@@ -13,8 +13,12 @@
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.967.0",
     "@aws-sdk/lib-dynamodb": "^3.967.0",
+    "@primevue/themes": "^4.5.4",
     "aws-amplify": "^6.6.6",
-    "vue": "^3.4.21"
+    "primeicons": "^7.0.0",
+    "primevue": "^4.5.5",
+    "vue": "^3.4.21",
+    "vue-router": "^5.0.6"
   },
   "devDependencies": {
     "@aws-amplify/backend": "^1.5.0",
