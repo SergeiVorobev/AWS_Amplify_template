@@ -34,6 +34,9 @@ const schema = a.schema({
       avgPrice:         a.float().required(),
       transactionCount: a.integer().required(),
     })
+    .secondaryIndexes((index) => [
+      index("aggregateKey").sortKeys(["branch"]),
+    ])
     .authorization((allow) => [allow.publicApiKey()]),
 });
 
