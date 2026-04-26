@@ -71,7 +71,7 @@ const revenueByMonthChart = computed(() => {
   });
   const months = Object.keys(byMonth).sort();
   return {
-    title: { text: "Revenue by Month", left: "center" },
+    title: { text: "Revenue by Month", left: "center", textStyle: { fontSize: 13 } },
     tooltip: { trigger: "axis" },
     xAxis: { type: "category", data: months },
     yAxis: { type: "value", name: "€" },
@@ -87,12 +87,12 @@ const byCategoryChart = computed(() => {
     byCategory[category] = (byCategory[category] ?? 0) + item.totalRevenue;
   });
   return {
-    title: { text: "Revenue by Category", left: "center" },
+    title: { text: "Revenue by Category", left: "center", textStyle: { fontSize: 13 } },
     tooltip: { trigger: "item" },
     legend: { bottom: 0 },
     series: [{
       type: "pie",
-      radius: "60%",
+      radius: "55%",
       data: Object.entries(byCategory).map(([name, value]) => ({
         name, value: parseFloat(value.toFixed(2))
       })),
@@ -108,7 +108,7 @@ const byBranchChart = computed(() => {
   });
   const sorted = Object.entries(byBranch).sort((a, b) => b[1] - a[1]);
   return {
-    title: { text: "Top Branches by Revenue", left: "center" },
+    title: { text: "Top Branches by Revenue", left: "center", textStyle: { fontSize: 13 } },
     tooltip: { trigger: "axis" },
     xAxis: { type: "value", name: "€" },
     yAxis: { type: "category", data: sorted.map(([b]) => b) },
@@ -147,17 +147,17 @@ onMounted(loadData);
     <div class="charts-grid">
       <Card>
         <template #content>
-          <VChart :option="revenueByMonthChart" style="height: 300px" autoresize />
+          <VChart :option="revenueByMonthChart" style="height: 220px" autoresize />
         </template>
       </Card>
       <Card>
         <template #content>
-          <VChart :option="byCategoryChart" style="height: 300px" autoresize />
+          <VChart :option="byCategoryChart" style="height: 220px" autoresize />
         </template>
       </Card>
       <Card class="full-width">
         <template #content>
-          <VChart :option="byBranchChart" style="height: 250px" autoresize />
+          <VChart :option="byBranchChart" style="height: 160px" autoresize />
         </template>
       </Card>
     </div>
@@ -181,14 +181,14 @@ onMounted(loadData);
 
 <style scoped>
 .analytics-wrapper {
-  padding: 2rem;
+  padding: 1rem 2rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .page-title {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: #1A3A5C;
 }
 
@@ -213,7 +213,7 @@ onMounted(loadData);
 .charts-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .full-width {
