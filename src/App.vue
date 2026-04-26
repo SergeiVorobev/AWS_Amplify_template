@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import Todos from './components/Todos.vue'
+import { RouterView } from "vue-router";
 </script>
 
 <template>
   <main>
-    <Todos />
+    <RouterView />
   </main>
 </template>
 
