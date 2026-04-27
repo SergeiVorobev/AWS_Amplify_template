@@ -137,7 +137,7 @@ const submitTransaction = async () => {
 .form-wrapper {
   display: flex;
   justify-content: center;
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 .form-card {
