@@ -181,7 +181,7 @@ onMounted(loadData);
 
 <style scoped>
 .analytics-wrapper {
-  padding: 1rem 2rem;
+  padding: 1.5rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;

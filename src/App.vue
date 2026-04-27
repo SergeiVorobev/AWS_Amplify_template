@@ -19,8 +19,10 @@ import { RouterLink } from "vue-router";
   gap: 1.5rem;
   padding: 1rem 2rem;
   background-color: #1A3A5C;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
 }
 
@@ -33,6 +35,10 @@ import { RouterLink } from "vue-router";
 
 .nav-link:hover {
   color: #90CAF9;
+}
+
+main {
+  margin-top: 56px;
 }
 </style>
 
